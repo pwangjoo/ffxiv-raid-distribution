@@ -1,18 +1,25 @@
 import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+import expressEjsLayouts from "express-ejs-layouts";
+import router_index from "./routes/index.js";
 
 // init
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = express();
 
-// port
-const PORT = process.env.PORT || 8080;
-app.set("port", PORT);
+// settings
+app.set("port", process.env.PORT || 8080);
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
-// route
-app.get("/", (req, res) => {
-  res.send("Hello, Express");
-});
+// routes
+app.use(express.static(path.join(__dirname, "public")));
+app.use(expressEjsLayouts);
+app.use("/", router_index);
 
 // start
 app.listen(app.get("port"), () => {
-  console.log("Listening on PORT " + app.get("port") + " ...");
+  console.log(`Listening on http://localhost:${app.get("port")} ...`);
 });
