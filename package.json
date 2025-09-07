@@ -1,0 +1,19 @@
+{
+  "name": "ffxiv-raid-distribution",
+  "version": "0.0.1",
+  "description": "파이널판타지14 레이드 분배 시스템",
+  "author": "June Park",
+  "license": "MIT",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3"
+  },
+  "type": "module"
+}
