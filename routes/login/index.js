@@ -4,6 +4,7 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   res.render("pages/login", {
     layout: "layouts/layout",
+    title: "로그인",
   });
 });
 
