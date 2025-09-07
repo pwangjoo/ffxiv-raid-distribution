@@ -1,8 +1,8 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import expressEjsLayouts from "express-ejs-layouts";
-import router_index from "./routes/index.js";
+import expressLayouts from "express-ejs-layouts";
+import routerIndex from "./routes/index.js";
 
 // init
 const __filename = fileURLToPath(import.meta.url);
@@ -16,8 +16,13 @@ app.set("views", path.join(__dirname, "views"));
 
 // routes
 app.use(express.static(path.join(__dirname, "public")));
-app.use(expressEjsLayouts);
-app.use("/", router_index);
+app.use(expressLayouts);
+app.use("/", routerIndex);
+
+// error
+app.use((req, res, next) => {
+  res.redirect("/");
+});
 
 // start
 app.listen(app.get("port"), () => {

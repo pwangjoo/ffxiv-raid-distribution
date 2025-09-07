@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title || "FFXIV RAID DISTRIBTION" %></title>
+    <title>
+      <%= typeof title !== 'undefined' ? title : "FFXIV 레이드 분배" %>
+    </title>
     <meta
       name="description"
-      content="<%= description || '파이널판타지 레이드 분배 시스템' %>"
+      content="<%= typeof description !== 'undefined' ? description : 'FFXIV Raid Distribution System' %>"
     />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <%- body || 'PAGE NOT FOUND' %>
+    <%- body %>
   </body>
 </html>
