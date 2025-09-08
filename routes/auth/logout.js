@@ -1,14 +1,13 @@
 import express from "express";
+import { destroySession } from "#util/auth";
+
 const router = express.Router();
 
 /**
- * GET: 홈페이지
+ * GET: 로그아웃
  */
 router.get("/", async (req, res, next) => {
-  res.render("pages/main", {
-    layout: "layouts/layout",
-    title: "홈페이지",
-  });
+  destroySession(req, res, () => res.redirect("/"));
 });
 
 export default router;

@@ -1,7 +1,12 @@
 import express from "express";
+
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+/**
+ * GET: BIS
+ */
+router.get("/", async (req, res, next) => {
+  const { user } = req.session || {};
   res.render("pages/bis", {
     layout: "layouts/layout",
     title: "BIS",

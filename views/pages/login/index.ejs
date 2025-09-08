@@ -1,2 +1,25 @@
 <link rel="stylesheet" href="/css/login/style.css" />
-<p>LOGIN</p>
+<div class="container-login">
+  <form action="/login" id="login" method="post" autocapitalize="none">
+    <div class="flex-col">
+      <label for="email" class="input-group-lg">
+        <input
+          class="form-control"
+          name="email"
+          type="email"
+          placeholder="이메일"
+          autocomplete="email"
+        />
+      </label>
+      <label for="password" class="input-group-lg">
+        <input
+          class="form-control"
+          name="password"
+          type="password"
+          placeholder="비밀번호"
+        />
+      </label>
+    </div>
+    <button type="submit" class="btn btn-dark btn-lg">로그인</button>
+  </form>
+</div>

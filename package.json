@@ -9,10 +9,19 @@
     "start": "nodemon app.js"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.2",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.2",
+    "jsonwebtoken": "^9.0.2",
     "nodemon": "^3.1.10"
   },
-  "type": "module"
+  "type": "module",
+  "imports": {
+    "#routes/*": "./routes/*.js",
+    "#util/*": "./util/*.js"
+  }
 }

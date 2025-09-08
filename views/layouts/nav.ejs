@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">FFXIV Raid Distribution</a>
     <button
@@ -25,12 +25,20 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           ></a>
+          <% if (user) { %>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/login">로그인</a></li>
+            <li>
+              <a class="dropdown-item" href="profile"><%= user.id %></a>
+            </li>
             <li><a class="dropdown-item" href="/setting">설정</a></li>
             <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" href="/logout">로그아웃</a></li>
           </ul>
+          <% } else { %>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/login">로그인</a></li>
+          </ul>
+          <% } %>
         </li>
       </ul>
     </div>

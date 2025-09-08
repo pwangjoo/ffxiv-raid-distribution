@@ -1,0 +1,32 @@
+html {
+  background-color: #e4e4e4;
+}
+
+.container-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--mgn-df-v);
+}
+
+#login {
+  background-color: #ffffff50;
+  padding: var(--pad-df);
+  display: grid;
+  gap: var(--gap-df-v);
+  min-width: 300px;
+  border-radius: 10px;
+}
+
+#login .flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm-v);
+}
+
+@media (max-width: 500px) {
+  #login {
+    min-width: none;
+  }
+}
