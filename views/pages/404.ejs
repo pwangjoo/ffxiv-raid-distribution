@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/css/error.css" />
+
+<script>
+  const redirect = () => {
+    window.location.replace("/");
+  };
+  document.addEventListener("DOMContentLoaded", () => {
+    document.title = "페이지를 찾을 수 없습니다.";
+
+    // DOM에 첫 숫자 표시
+    const countdownEl = document.getElementById("countdown");
+    let seconds = parseInt(countdownEl.textContent);
+    countdownEl.textContent = seconds;
+
+    const timer = setInterval(() => {
+      seconds--;
+
+      if (seconds <= 0) {
+        clearInterval(timer);
+        redirect();
+      } else {
+        countdownEl.textContent = seconds;
+      }
+    }, 1000);
+  });
+</script>
+
+<div id="error" class="container">
+  <h4>NOT FOUND</h4>
+  <h6 style="margin-top: -15px">페이지를 찾을 수 없습니다.<br /></h6>
+  <h6><span id="countdown">5</span>초 후, 메인페이지로 이동됩니다.</h6>
+  <p style="margin-top: -20px; color: grey">
+    또는 <a href="javascript:redirect()">바로가기</a>
+  </p>
+</div>

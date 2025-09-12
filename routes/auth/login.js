@@ -26,6 +26,7 @@ router.post("/", async (req, res, next) => {
   const { email, password } = req.body;
   const user = {
     id: email,
+    name: "이름",
   };
 
   writeCookie(res, user);

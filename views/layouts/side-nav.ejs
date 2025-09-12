@@ -1,0 +1,72 @@
+<div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+  <div
+    class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
+  >
+    <a
+      href="/"
+      class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+    >
+      <span class="fs-5 d-none d-sm-inline">FFXIV 레이드 분배</span>
+    </a>
+    <ul
+      class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+      id="menu"
+    >
+      <li>
+        <a
+          href="#submenu1"
+          data-bs-toggle="collapse"
+          class="nav-link px-0 align-middle"
+        >
+          <i class="fs-4 bi-speedometer2"></i>
+          <span class="ms-1 d-none d-sm-inline">전체</span>
+        </a>
+        <ul
+          class="collapse show nav flex-column ms-1"
+          id="submenu1"
+          data-bs-parent="#menu"
+        >
+          <li class="w-100">
+            <a href="/v1/1234-ABCD-EFGH-EFWO" class="nav-link px-0">
+              <span class="d-none d-sm-inline">정상 시트</span>
+            </a>
+          </li>
+          <li class="w-100">
+            <a href="/v1/1234" class="nav-link px-0">
+              <span class="d-none d-sm-inline">없는 시트</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <hr />
+    <div class="dropdown pb-4">
+      <% if (user) { %>
+      <a
+        href="#"
+        class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+        id="dropdownUser1"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <span class="d-none d-sm-inline mx-1"><%= user?.name%></span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <li><a class="dropdown-item" href="/v1">신규...</a></li>
+        <li><a class="dropdown-item" href="/settings">설정</a></li>
+        <li><a class="dropdown-item" href="/profile">프로필</a></li>
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        <li><a class="dropdown-item" href="/logout">로그아웃</a></li>
+        <% } else { %>
+        <a
+          class="d-flex align-items-center text-white text-decoration-none"
+          href="/login"
+          >로그인</a
+        >
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</div>

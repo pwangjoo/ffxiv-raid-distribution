@@ -1,0 +1,26 @@
+html {
+  height: 70vh;
+}
+body {
+  height: 100%;
+  background-color: #dfdfdf;
+  display: flex;
+  align-items: center;
+}
+
+#error {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px;
+  background-color: #f8f8f8;
+  max-width: 1000px;
+}
+
+#error * {
+  text-align: center;
+}
+
+#error h4 {
+  color: #9e2f2f;
+}
